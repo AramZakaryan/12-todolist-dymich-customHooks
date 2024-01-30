@@ -3,7 +3,6 @@ import {CondType, todolistType} from "../App";
 import {todolistId1, todolistId2} from "../id-utils";
 import {v1} from "uuid";
 
-//////////////////////////////////////////////////// any
 export function useTodolists(
     onAddTodolist: (newTodolistId: string) => void,
     onRemoveTodolist: (newTodolistId: string) => void
@@ -34,7 +33,6 @@ export function useTodolists(
         // setAllTasks({...allTtasks, [newTodolistId]: []})
         onAddTodolist(newTodolistId)
     }
-
     const removeTodolist = (todolistId: string) => {
 
         let todolistsUpdated = todolists.filter(el => el.id !== todolistId)
@@ -46,8 +44,6 @@ export function useTodolists(
         onRemoveTodolist(todolistId)
 
     }
-
-
     const changeTodolistTitle = (todolistId: string, changedTodolistTitle: string) => {
         let todlolistUpdated = todolists.find(el => el.id === todolistId)
 
@@ -56,7 +52,6 @@ export function useTodolists(
             setTodolists([...todolists])
         }
     }
-
     const changeFilterCond = (cond: CondType, todolistId: string) => {
         let todolist =
             todolists.find(el => el.id === todolistId)

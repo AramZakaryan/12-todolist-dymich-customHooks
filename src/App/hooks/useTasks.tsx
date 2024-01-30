@@ -78,7 +78,7 @@ export function useTasks() {
 
     return {
         allTtasks,
-        setAllTasks,
+        // setAllTasks,
         removeTask,
         addTask,
         changeTaskStatus,
