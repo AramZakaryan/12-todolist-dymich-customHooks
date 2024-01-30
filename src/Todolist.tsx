@@ -40,7 +40,7 @@ export const Todolist = React.memo(
             = props
 
 
-        console.log("Todolist runs.")
+        // console.log("Todolist runs.")
 
         const AllBtnOnClickHandler = useCallback(() =>
                 // props.changeFilterCond("All", props.todolistId)

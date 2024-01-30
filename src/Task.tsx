@@ -38,7 +38,7 @@ export const Task = React.memo(
                 changeTaskTitle(todolistId, id, changedTaskTitle)
             , [changeTaskTitle, todolistId, id])
 
-        console.log("Task runs.")
+        // console.log("Task runs.")
 
         return (<>
             <div key={id} // props.task.id

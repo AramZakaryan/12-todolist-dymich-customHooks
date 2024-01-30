@@ -61,6 +61,20 @@ export function useTasks() {
 
     }
 
+    const onAddTodolist = (newTodolistId: string) => {
+        setAllTasks({
+                ...allTtasks,
+                [newTodolistId]: []
+            }
+        )
+    }
+
+
+    const onRemoveTodolist = (todolistId: string) => {
+        delete allTtasks[todolistId]
+        setAllTasks({...allTtasks})
+    }
+
 
     return {
         allTtasks,
@@ -68,6 +82,8 @@ export function useTasks() {
         removeTask,
         addTask,
         changeTaskStatus,
-        changeTaskTitle
+        changeTaskTitle,
+        onAddTodolist,
+        onRemoveTodolist
     }
 }

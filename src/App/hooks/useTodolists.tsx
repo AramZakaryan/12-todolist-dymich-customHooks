@@ -2,9 +2,12 @@ import {useState} from "react";
 import {CondType, todolistType} from "../App";
 import {todolistId1, todolistId2} from "../id-utils";
 import {v1} from "uuid";
-import {useTasks} from "./useTasks";
 
-export function useTodolists(allTtasks:any,setAllTasks:any) {
+//////////////////////////////////////////////////// any
+export function useTodolists(
+    onAddTodolist: (newTodolistId: string) => void,
+    onRemoveTodolist: (newTodolistId: string) => void
+) {
 
     // const {
     //     allTtasks,
@@ -28,7 +31,8 @@ export function useTodolists(allTtasks:any,setAllTasks:any) {
         let newTodolist: todolistType = {id: newTodolistId, todolistTitle: title, filterCond: "All"}
         setTodolists([...todolists, newTodolist])
 
-        setAllTasks({...allTtasks, [newTodolistId]: []})
+        // setAllTasks({...allTtasks, [newTodolistId]: []})
+        onAddTodolist(newTodolistId)
     }
 
     const removeTodolist = (todolistId: string) => {
@@ -37,8 +41,9 @@ export function useTodolists(allTtasks:any,setAllTasks:any) {
 
         setTodolists(todolistsUpdated)
 
-        delete allTtasks[todolistId]
-        setAllTasks({...allTtasks})
+        // delete allTtasks[todolistId]
+        // setAllTasks({...allTtasks})
+        onRemoveTodolist(todolistId)
 
     }
 

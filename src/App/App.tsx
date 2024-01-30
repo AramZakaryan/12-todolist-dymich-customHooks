@@ -29,8 +29,10 @@ function App() {
         removeTask,
         addTask,
         changeTaskStatus,
-        changeTaskTitle
-    }  = useTasks()
+        changeTaskTitle,
+        onAddTodolist,
+        onRemoveTodolist
+    } = useTasks()
 
     const {
         todolists,
@@ -38,7 +40,7 @@ function App() {
         removeTodolist,
         changeTodolistTitle,
         changeFilterCond
-    } = useTodolists(allTtasks,setAllTasks)
+    } = useTodolists(onAddTodolist, onRemoveTodolist)
 
     // let todolistId1 = v1()
     // let todolistId2 = v1()
@@ -146,10 +148,10 @@ function App() {
     //     }
     // }
 
+    console.log(todolists, allTtasks)
 
     return (
         <div className="App">
-
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -183,7 +185,7 @@ function App() {
                                     : filteredTasks = allTtasks[el.id]
 
                             return (
-                                <Grid item>
+                                <Grid item key={el.id}>
                                     <Paper style={{padding: "10px"}}>
                                         <Todolist
                                             key={el.id}
