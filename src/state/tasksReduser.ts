@@ -1,4 +1,4 @@
-import {allTasksType, CondType, todolistType} from "../App";
+import {allTasksType, CondType, todolistType} from "../App/App";
 import {v1} from "uuid";
 import {addTodolistActionType, remTodolistActionType, todolistId1, todolistId2} from "./todolistsReduser";
 

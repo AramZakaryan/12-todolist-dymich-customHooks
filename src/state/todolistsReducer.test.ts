@@ -1,4 +1,4 @@
-import {CondType, todolistType} from "../App";
+import {CondType, todolistType} from "../App/App";
 import {v1} from "uuid";
 import {
     todolistActionType,

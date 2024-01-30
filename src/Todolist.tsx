@@ -1,5 +1,5 @@
 import React, {useCallback} from "react";
-import {CondType} from "./App";
+import {CondType} from "./App/App";
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 import {Button, IconButton} from "@mui/material";
